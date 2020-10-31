@@ -6,6 +6,7 @@ public class selection_click : MonoBehaviour
 {
     public LayerMask clickable_layer;
     public GameObject currently_selected;
+    public GameObject info_text_box;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,7 +21,7 @@ public class selection_click : MonoBehaviour
             RaycastHit ray_hit;
             if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out ray_hit, Mathf.Infinity, clickable_layer))
             {
-                ray_hit.collider.GetComponent<selection_click_on>().clic_me();
+                ray_hit.collider.GetComponent<selection_click_on>().clic_me(info_text_box);
                 if (!currently_selected)
                 {
                     currently_selected = ray_hit.transform.gameObject;
