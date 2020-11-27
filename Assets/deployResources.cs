@@ -38,7 +38,7 @@ public class deployResources : MonoBehaviour
 
     IEnumerator fruityBushWave()
     {
-        while(totalGameObjects.Length < 30)
+        while(totalGameObjects.Length < 70)
         {
             yield return new WaitForSeconds(respawnTime);
             int index = Random.Range(0, resources.Length);
