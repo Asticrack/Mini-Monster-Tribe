@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &5411760139487312773
+--- !u!1 &2179951211683305600
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,37 +8,37 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 5411760139487312772}
-  - component: {fileID: 5411760139487312770}
-  - component: {fileID: 5411760139487312771}
-  m_Layer: 0
-  m_Name: player monster txt
+  - component: {fileID: 7442409680035507035}
+  - component: {fileID: 4096719854072525379}
+  - component: {fileID: 6854641390436452234}
+  m_Layer: 8
+  m_Name: bad monster house txt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &5411760139487312772
+--- !u!4 &7442409680035507035
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5411760139487312773}
+  m_GameObject: {fileID: 2179951211683305600}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.13, y: 3.31, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -0.65000004, y: 1.4266667, z: 0}
+  m_LocalScale: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
   m_Children: []
-  m_Father: {fileID: 5411760140763764570}
+  m_Father: {fileID: 2432709392305396524}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!23 &5411760139487312770
+--- !u!23 &4096719854072525379
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5411760139487312773}
+  m_GameObject: {fileID: 2179951211683305600}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -73,15 +73,15 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!102 &5411760139487312771
+--- !u!102 &6854641390436452234
 TextMesh:
   serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5411760139487312773}
-  m_Text: player Monster
+  m_GameObject: {fileID: 2179951211683305600}
+  m_Text: bm house
   m_OffsetZ: 0
   m_CharacterSize: 0.1
   m_LineSpacing: 1
@@ -95,7 +95,7 @@ TextMesh:
   m_Color:
     serializedVersion: 2
     rgba: 4294967295
---- !u!1 &5411760140763764574
+--- !u!1 &2940763109012946297
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -103,47 +103,48 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 5411760140763764570}
-  - component: {fileID: 5411760140763764571}
-  - component: {fileID: 5411760140763764572}
-  - component: {fileID: 5411760140763764573}
-  m_Layer: 0
-  m_Name: player monster
+  - component: {fileID: 2432709392305396524}
+  - component: {fileID: 8577047285592392060}
+  - component: {fileID: 1387765159267888048}
+  - component: {fileID: 884244092155558596}
+  - component: {fileID: 1645011948}
+  m_Layer: 8
+  m_Name: bad monster house
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &5411760140763764570
+--- !u!4 &2432709392305396524
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5411760140763764574}
+  m_GameObject: {fileID: 2940763109012946297}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -11.25, y: 1, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -15.1, y: 1.5, z: -13.9}
+  m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children:
-  - {fileID: 5411760139487312772}
+  - {fileID: 7442409680035507035}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &5411760140763764571
+--- !u!33 &8577047285592392060
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5411760140763764574}
-  m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &5411760140763764572
+  m_GameObject: {fileID: 2940763109012946297}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &1387765159267888048
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5411760140763764574}
+  m_GameObject: {fileID: 2940763109012946297}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -156,7 +157,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: b2e29d56029274b488b45fe735bda32a, type: 2}
+  - {fileID: 2100000, guid: 282c2122bc2a3754892d8916286662c4, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -178,17 +179,34 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &5411760140763764573
-CapsuleCollider:
+--- !u!65 &884244092155558596
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5411760140763764574}
+  m_GameObject: {fileID: 2940763109012946297}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1645011948
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2940763109012946297}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f69deb0c0851e1e40b00251cb7abaafa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  red: {fileID: 0}
+  green: {fileID: 0}
+  is_selected: 0
+  information_text_object: {fileID: 0}
+  test: {fileID: 0}
+  z_spawn_factor: 2

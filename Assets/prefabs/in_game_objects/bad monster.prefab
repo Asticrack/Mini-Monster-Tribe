@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6843303053129680345}
   - component: {fileID: 8866830273208244730}
   - component: {fileID: 3673760092748316700}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: bad monster txt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -107,7 +107,8 @@ GameObject:
   - component: {fileID: 7690979676646623933}
   - component: {fileID: 139538004204070705}
   - component: {fileID: 6991175571578166043}
-  m_Layer: 0
+  - component: {fileID: 575265450}
+  m_Layer: 8
   m_Name: bad monster
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -192,3 +193,21 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &575265450
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6595587244432540485}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f69deb0c0851e1e40b00251cb7abaafa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  red: {fileID: 0}
+  green: {fileID: 0}
+  is_selected: 0
+  information_text_object: {fileID: 0}
+  test: {fileID: 0}
+  z_spawn_factor: 2

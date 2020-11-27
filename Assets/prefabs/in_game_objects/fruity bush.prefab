@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &5188433592068609904
+--- !u!1 &543160173687067944
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,47 +8,48 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 5906834628749423948}
-  - component: {fileID: 5868793148462265999}
-  - component: {fileID: 2441641642195933894}
-  - component: {fileID: 6878014127304665735}
-  m_Layer: 0
-  m_Name: cool monster house
-  m_TagString: Untagged
+  - component: {fileID: 1880222065514335333}
+  - component: {fileID: 8294656082805160476}
+  - component: {fileID: 13710107168040770}
+  - component: {fileID: 310940149721880167}
+  - component: {fileID: 439707817}
+  m_Layer: 8
+  m_Name: fruity bush
+  m_TagString: Resource
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &5906834628749423948
+--- !u!4 &1880222065514335333
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5188433592068609904}
+  m_GameObject: {fileID: 543160173687067944}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -15.1, y: 1.5, z: -7.39}
-  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_LocalPosition: {x: -1.25, y: 0.12, z: 5.51}
+  m_LocalScale: {x: 1.62, y: 1.3, z: 1.2}
   m_Children:
-  - {fileID: 2486643628630330161}
+  - {fileID: 1062371532095423897}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &5868793148462265999
+--- !u!33 &8294656082805160476
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5188433592068609904}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &2441641642195933894
+  m_GameObject: {fileID: 543160173687067944}
+  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &13710107168040770
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5188433592068609904}
+  m_GameObject: {fileID: 543160173687067944}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -61,7 +62,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: d2579a45f4ff24c418dca11259f55655, type: 2}
+  - {fileID: 2100000, guid: b2e29d56029274b488b45fe735bda32a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -83,20 +84,38 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &6878014127304665735
-BoxCollider:
+--- !u!135 &310940149721880167
+SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5188433592068609904}
+  m_GameObject: {fileID: 543160173687067944}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!1 &6948437997643177130
+--- !u!114 &439707817
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 543160173687067944}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f69deb0c0851e1e40b00251cb7abaafa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  red: {fileID: 0}
+  green: {fileID: 0}
+  is_selected: 0
+  information_text_object: {fileID: 0}
+  test: {fileID: 0}
+  z_spawn_factor: 2
+--- !u!1 &4002389369529604393
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -104,37 +123,37 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2486643628630330161}
-  - component: {fileID: 1828566736353737736}
-  - component: {fileID: 31073055063212472}
-  m_Layer: 0
-  m_Name: cool monster house txt
+  - component: {fileID: 1062371532095423897}
+  - component: {fileID: 8345202590617605896}
+  - component: {fileID: 7225503573314224619}
+  m_Layer: 8
+  m_Name: tree txt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &2486643628630330161
+--- !u!4 &1062371532095423897
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6948437997643177130}
+  m_GameObject: {fileID: 4002389369529604393}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.65000004, y: 1.4266667, z: 0}
-  m_LocalScale: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+  m_LocalPosition: {x: -1.2407407, y: 1.5230769, z: 0}
+  m_LocalScale: {x: 0.61728394, y: 0.7692308, z: 0.83333325}
   m_Children: []
-  m_Father: {fileID: 5906834628749423948}
+  m_Father: {fileID: 1880222065514335333}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!23 &1828566736353737736
+--- !u!23 &8345202590617605896
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6948437997643177130}
+  m_GameObject: {fileID: 4002389369529604393}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -169,15 +188,15 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!102 &31073055063212472
+--- !u!102 &7225503573314224619
 TextMesh:
   serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6948437997643177130}
-  m_Text: cm house
+  m_GameObject: {fileID: 4002389369529604393}
+  m_Text: fruity bush
   m_OffsetZ: 0
   m_CharacterSize: 0.1
   m_LineSpacing: 1

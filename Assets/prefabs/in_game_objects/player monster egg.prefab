@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &4051311567335417219
+--- !u!1 &4321214480588098801
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,47 +8,48 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1610122281278473250}
-  - component: {fileID: 7921994240805026442}
-  - component: {fileID: 5710205249178082874}
-  - component: {fileID: 7373275263779393379}
-  m_Layer: 0
-  m_Name: water
-  m_TagString: Resource
+  - component: {fileID: 4094178384373146021}
+  - component: {fileID: 930612986958330684}
+  - component: {fileID: 930662106839318960}
+  - component: {fileID: 124112001201600997}
+  - component: {fileID: 1034796119}
+  m_Layer: 8
+  m_Name: player monster egg
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1610122281278473250
+--- !u!4 &4094178384373146021
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4051311567335417219}
+  m_GameObject: {fileID: 4321214480588098801}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.67, y: 0.14, z: 6.1}
-  m_LocalScale: {x: 4, y: 0.2, z: 4}
+  m_LocalPosition: {x: -9.37, y: 0.58, z: -0.34}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
-  - {fileID: 7981937956836775204}
+  - {fileID: 4760722530403452573}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &7921994240805026442
+--- !u!33 &930612986958330684
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4051311567335417219}
-  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &5710205249178082874
+  m_GameObject: {fileID: 4321214480588098801}
+  m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &930662106839318960
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4051311567335417219}
+  m_GameObject: {fileID: 4321214480588098801}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -61,7 +62,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: d2579a45f4ff24c418dca11259f55655, type: 2}
+  - {fileID: 2100000, guid: b2e29d56029274b488b45fe735bda32a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -83,21 +84,39 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &7373275263779393379
+--- !u!136 &124112001201600997
 CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4051311567335417219}
+  m_GameObject: {fileID: 4321214480588098801}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.5000001
+  m_Radius: 0.5
   m_Height: 2
   m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
---- !u!1 &4211371420791322564
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1034796119
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4321214480588098801}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f69deb0c0851e1e40b00251cb7abaafa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  red: {fileID: 0}
+  green: {fileID: 0}
+  is_selected: 0
+  information_text_object: {fileID: 0}
+  test: {fileID: 0}
+  z_spawn_factor: 2
+--- !u!1 &4633212478343802123
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -105,37 +124,37 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 7981937956836775204}
-  - component: {fileID: 3201078498760446001}
-  - component: {fileID: 149891660022017912}
-  m_Layer: 0
-  m_Name: water txt
+  - component: {fileID: 4760722530403452573}
+  - component: {fileID: 2403788673558951557}
+  - component: {fileID: 6562124123712974222}
+  m_Layer: 8
+  m_Name: egg txt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &7981937956836775204
+--- !u!4 &4760722530403452573
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4211371420791322564}
+  m_GameObject: {fileID: 4633212478343802123}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.207, y: 2.9, z: 0.432}
-  m_LocalScale: {x: 0.25, y: 5, z: 0.25}
+  m_LocalPosition: {x: -3.13, y: 3.31, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1610122281278473250}
+  m_Father: {fileID: 4094178384373146021}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!23 &3201078498760446001
+--- !u!23 &2403788673558951557
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4211371420791322564}
+  m_GameObject: {fileID: 4633212478343802123}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -170,15 +189,15 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!102 &149891660022017912
+--- !u!102 &6562124123712974222
 TextMesh:
   serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4211371420791322564}
-  m_Text: Water
+  m_GameObject: {fileID: 4633212478343802123}
+  m_Text: ' pm egg'
   m_OffsetZ: 0
   m_CharacterSize: 0.1
   m_LineSpacing: 1

@@ -7,7 +7,7 @@ public class info_text_box : MonoBehaviour
     // Start is called before the first frame update
     public GameObject children_3d_text;
     public GameObject children_3d_box;
-    public GameObject source_object;
+    public GameObject main_camera_of_the_scene;
     public Transform target;
     public Vector3 y_pos_factor = new Vector3(0, 3, 0);
     public Bounds bounds_of_3d_text;
@@ -21,7 +21,7 @@ public class info_text_box : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        this.transform.position = source_object.transform.position + y_pos_factor;
+        this.transform.position = main_camera_of_the_scene.transform.position + y_pos_factor;
         // Rotate the camera every frame so it keeps looking at the target
         transform.LookAt(target);
         bounds_of_3d_text = children_3d_text.GetComponent<Renderer>().bounds;
@@ -35,7 +35,7 @@ public class info_text_box : MonoBehaviour
 
     public void initiate_position()
     {
-        this.transform.position = source_object.transform.position + y_pos_factor;
+        this.transform.position = main_camera_of_the_scene.transform.position + y_pos_factor;
         // Rotate the camera every frame so it keeps looking at the target
         transform.LookAt(target);
     }
