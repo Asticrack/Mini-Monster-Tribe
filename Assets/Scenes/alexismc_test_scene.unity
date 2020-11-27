@@ -4199,10 +4199,7 @@ PrefabInstance:
       propertyPath: m_Text
       value: 'nouriture restante : 80
 
-        jours de vie : 4
-
-        is sex important
-        : yes'
+        jours de vie : 4'
       objectReference: {fileID: 0}
     - target: {fileID: 240281724463563386, guid: 2f9d4d86e20e8374ab1a682209358583, type: 3}
       propertyPath: m_LocalRotation.y
