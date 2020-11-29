@@ -108,6 +108,7 @@ GameObject:
   - component: {fileID: 3985457371409456200}
   - component: {fileID: 6051573071685023382}
   - component: {fileID: 1504949495}
+  - component: {fileID: 2512656953895434177}
   m_Layer: 8
   m_Name: cool monster
   m_TagString: Untagged
@@ -211,3 +212,15 @@ MonoBehaviour:
   information_text_object: {fileID: 0}
   test: {fileID: 0}
   z_spawn_factor: 2
+--- !u!114 &2512656953895434177
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6337677108355637412}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 765b5a6586be5ba48a6525cc399d5804, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 930662106839318960}
   - component: {fileID: 124112001201600997}
   - component: {fileID: 1034796119}
+  - component: {fileID: 8803981111790762744}
   m_Layer: 8
   m_Name: player monster egg
   m_TagString: Untagged
@@ -116,6 +117,18 @@ MonoBehaviour:
   information_text_object: {fileID: 0}
   test: {fileID: 0}
   z_spawn_factor: 2
+--- !u!114 &8803981111790762744
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4321214480588098801}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 765b5a6586be5ba48a6525cc399d5804, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4633212478343802123
 GameObject:
   m_ObjectHideFlags: 0
