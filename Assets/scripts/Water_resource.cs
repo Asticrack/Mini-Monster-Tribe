@@ -5,8 +5,8 @@ using UnityEngine;
 public class Water_ressource : MonoBehaviour
 {
     System.Random rand = new System.Random();
-    private float maxWaterQuantity = 5f; // En litres par exemple...
-    private float currentWaterQuantity;
+    private int maxWaterQuantity = 5; // En litres par exemple...
+    private int currentWaterQuantity;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,27 +18,22 @@ public class Water_ressource : MonoBehaviour
     /// </summary>
     private void generateCurrentWaterQuantity()
     {
-        currentWaterQuantity = System.Convert.ToSingle(rand.NextDouble()) * 5f;
-        if (currentWaterQuantity < 1f)
-        {
-            generateCurrentWaterQuantity();
-        }
+        currentWaterQuantity = rand.Next(1, maxWaterQuantity);
     }
 
-    public float emptyRessource()
+    public int emptyRessource()
     {
-        float waterQuantityTaken = currentWaterQuantity;
-        currentWaterQuantity = 0f;
+        int waterQuantityTaken = currentWaterQuantity;
+        currentWaterQuantity = 0;
         return waterQuantityTaken;
     }
 
-    public float takeRessourceWithQuantity(float quantity)
+    public int takeRessourceWithQuantity(int quantity)
     {
-        float waterQuantityTaken;
+        int waterQuantityTaken;
         if (quantity > currentWaterQuantity)
         {
-            waterQuantityTaken = currentWaterQuantity;
-            currentWaterQuantity = 0f;
+            waterQuantityTaken = emptyRessource();
             return waterQuantityTaken;
         } else
         {
