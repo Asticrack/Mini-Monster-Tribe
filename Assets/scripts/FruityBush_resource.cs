@@ -48,7 +48,7 @@ public class FruityBush_resource : MonoBehaviour
 
     public string displayInformation()
     {
-        string s = System.String.Format("Récoltable : {0}/{0} fruits.", currentFruitsQuantity, maxFruitsQuantity);
+        string s = System.String.Format("Récoltable : {0}/{1} fruits.", currentFruitsQuantity, maxFruitsQuantity);
         return s;
     }
 
