@@ -51,7 +51,7 @@ public class Water_resource : MonoBehaviour
 
     public string displayInformation()
     {
-        string s = System.String.Format("Récoltable : {0}/{0} litres d'eau.", currentWaterQuantity, maxWaterQuantity);
+        string s = System.String.Format("Récoltable : {0}/{1} litres d'eau.", currentWaterQuantity, maxWaterQuantity);
         return s;
     }
 
