@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Water_ressource : MonoBehaviour
+public class Water_resource : MonoBehaviour
 {
     System.Random rand = new System.Random();
     private int maxWaterQuantity = 5; // En litres par exemple...
