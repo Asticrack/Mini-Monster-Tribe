@@ -24,6 +24,13 @@ public class Tree_resource : MonoBehaviour
         currentBuchesQuantity = 0;
         return quantityRecoltee;
     }
+    public int getWood(int quantity) {
+        if(quantity > currentBuchesQuantity) {
+            return cutTheTree();
+        }
+        currentBuchesQuantity -= quantity;
+        return quantity;
+    }
 
     public int getCurrentBucheQuantity()
     {
@@ -33,7 +40,7 @@ public class Tree_resource : MonoBehaviour
 
     public string displayInformation()
     {
-        string s = System.String.Format("Récoltable : {0}/{0} bûches.", currentBuchesQuantity, maxBuchesQuantity);
+        string s = System.String.Format("Récoltable : {0}/{1} bûches.", currentBuchesQuantity, maxBuchesQuantity);
         return s;
     }
 

@@ -33,21 +33,18 @@ public class ManualController : MonoBehaviour
         {
             nextMove.x += 1;
         }
-        monster.SetDirection(nextMove);
-    }
-
-    private void interact()
-    {
-        if(Input.GetKeyDown(KeyCode.I))
-        {
-            Debug.Log("Trying to interact");
+        if (Input.GetKeyDown(KeyCode.Space)) {
+            monster.setInteraction(true);
         }
+        else {
+            monster.setInteraction(false);
+        }
+        monster.SetDirection(nextMove);
     }
 
     // Update is called once per frame
     void Update()
     {
         move();
-        interact();
     }
 }
