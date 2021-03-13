@@ -28,6 +28,9 @@ public class Tree_resource : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (currentBuchesQuantity == 0)
+        {
+            Destroy(gameObject);
+        }
     }
 }

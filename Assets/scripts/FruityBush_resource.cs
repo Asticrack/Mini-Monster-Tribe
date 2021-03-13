@@ -43,6 +43,9 @@ public class FruityBush_resource : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (currentFruitsQuantity == 0)
+        {
+            Destroy(gameObject);
+        }
     }
 }

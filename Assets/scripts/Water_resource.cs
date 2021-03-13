@@ -46,6 +46,9 @@ public class Water_ressource : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (currentWaterQuantity == 0)
+        {
+            Destroy(gameObject);
+        }
     }
 }
