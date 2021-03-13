@@ -4,16 +4,16 @@ using UnityEngine;
 
 /**
  * Spawn randomly resources (tree, fruity bush or water) inside terrain boundings.
- * For instance, it just spawns every 2 seconds.
+ * For instance, it just spawns every 0.25 seconds.
  * 
  **/
 public class deployResources : MonoBehaviour
 {
-    public GameObject[] resources;
+    public System.Tuple<GameObject, int>[] resources;
     private float width = 12f;
     private float height = 12f;
-    private float respawnTime = 2.0f;
-    private GameObject[] totalGameObjects;
+    private float respawnTime = 0.25f;
+    private System.Tuple<GameObject, int>[] totalGameObjects;
 
     // Start is called before the first frame update
     void Start()
@@ -38,7 +38,7 @@ public class deployResources : MonoBehaviour
 
     IEnumerator fruityBushWave()
     {
-        while(totalGameObjects.Length < 70)
+        while(totalGameObjects.Length < 10)
         {
             yield return new WaitForSeconds(respawnTime);
             int index = Random.Range(0, resources.Length);
