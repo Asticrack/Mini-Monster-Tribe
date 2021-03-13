@@ -1,0 +1,29 @@
+{
+    "metadata": {
+        "stats_format_version": "0.2.0",
+        "mlagents_version": "0.24.1",
+        "torch_version": "1.8.0+cu111"
+    },
+    "MoveToWater": {
+        "checkpoints": [
+            {
+                "steps": 0,
+                "file_path": "results\\ppo\\MoveToWater\\MoveToWater-0.onnx",
+                "reward": null,
+                "creation_time": 1615658038.9694455
+            },
+            {
+                "steps": 0,
+                "file_path": "results\\ppo\\MoveToWater\\MoveToWater-0.onnx",
+                "reward": null,
+                "creation_time": 1615658104.4054558
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 0,
+            "file_path": "results\\ppo\\MoveToWater.onnx",
+            "reward": null,
+            "creation_time": 1615658104.4054558
+        }
+    }
+}
