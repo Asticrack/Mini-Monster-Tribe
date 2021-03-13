@@ -43,6 +43,18 @@ public class Water_ressource : MonoBehaviour
         }
     }
 
+    public int getCurrentWaterQuantity()
+    {
+        print(displayInformation());
+        return currentWaterQuantity;
+    }
+
+    public string displayInformation()
+    {
+        string s = System.String.Format("Récoltable : {0}/{0} litres d'eau.", currentWaterQuantity, maxWaterQuantity);
+        return s;
+    }
+
     // Update is called once per frame
     void Update()
     {

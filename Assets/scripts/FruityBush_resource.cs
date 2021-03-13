@@ -40,6 +40,18 @@ public class FruityBush_resource : MonoBehaviour
         }
     }
 
+    public int getCurrentFruitsQuantity()
+    {
+        print(displayInformation());
+        return currentFruitsQuantity;
+    }
+
+    public string displayInformation()
+    {
+        string s = System.String.Format("Récoltable : {0}/{0} fruits.", currentFruitsQuantity, maxFruitsQuantity);
+        return s;
+    }
+
     // Update is called once per frame
     void Update()
     {

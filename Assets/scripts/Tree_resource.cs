@@ -25,6 +25,18 @@ public class Tree_resource : MonoBehaviour
         return quantityRecoltee;
     }
 
+    public int getCurrentBucheQuantity()
+    {
+        print(displayInformation());
+        return currentBuchesQuantity;
+    }
+
+    public string displayInformation()
+    {
+        string s = System.String.Format("Récoltable : {0}/{0} bûches.", currentBuchesQuantity, maxBuchesQuantity);
+        return s;
+    }
+
     // Update is called once per frame
     void Update()
     {
