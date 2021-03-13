@@ -7,12 +7,16 @@ public class Monster : MonoBehaviour, IFalling
     private CharacterController controller;
 
     private float speed = 10f;
-    private Vector3 direction;
+    private Vector3 direction = Vector3.zero;
     private SphereCollider trigger;
 
     // Start is called before the first frame update
     void Start() {
         controller = gameObject.AddComponent<CharacterController>();
+        if(controller == null)
+        {
+            controller = gameObject.GetComponent<CharacterController>();
+        }
         trigger = GetComponent<SphereCollider>();
         Physics.IgnoreCollision(GetComponent<SphereCollider>(), GetComponent<CharacterController>());
         Physics.IgnoreCollision(GetComponent<CapsuleCollider>(), GetComponent<CharacterController>());

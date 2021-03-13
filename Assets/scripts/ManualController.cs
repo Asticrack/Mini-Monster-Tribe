@@ -17,19 +17,19 @@ public class ManualController : MonoBehaviour
     private void move()
     {
         nextMove = Vector3.zero;
-        if (Input.GetKey(KeyCode.Z))
+        if (Input.GetKey(KeyCode.UpArrow))
         {
             nextMove.z += 1;
         }
-        if (Input.GetKey(KeyCode.S))
+        if (Input.GetKey(KeyCode.DownArrow))
         {
             nextMove.z -= 1;
         }
-        if (Input.GetKey(KeyCode.Q))
+        if (Input.GetKey(KeyCode.LeftArrow))
         {
             nextMove.x -= 1;
         }
-        if (Input.GetKey(KeyCode.D))
+        if (Input.GetKey(KeyCode.RightArrow))
         {
             nextMove.x += 1;
         }
