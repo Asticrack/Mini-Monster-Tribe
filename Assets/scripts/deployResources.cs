@@ -9,18 +9,43 @@ using UnityEngine;
  **/
 public class deployResources : MonoBehaviour
 {
-    public System.Tuple<GameObject, int>[] resources;
+    public GameObject[] resources;
+    public int[] nbResources;
+    private List<System.Tuple<GameObject, int>> resourcesToSpawn = new List<System.Tuple<GameObject, int>>();
     private float width = 12f;
     private float height = 12f;
     private float respawnTime = 0.25f;
-    private System.Tuple<GameObject, int>[] totalGameObjects;
+    private List<System.Tuple<GameObject, int>> currentTotalObjectsOnScene = new List<System.Tuple<GameObject, int>>();
 
     // Start is called before the first frame update
     void Start()
     {
-        totalGameObjects = GameObject.FindGameObjectsWithTag("Resource");
-        Debug.Log(totalGameObjects.Length + " objects in total at first.");
+        initResourcesToSpawn();
+        initTotalGameObjects();
+
+        for (int i = 0; i < currentTotalObjectsOnScene.Count; i++)
+        {
+            print(System.String.Format("{0} {1} présents au total pour le moment sur la scène.", currentTotalObjectsOnScene[i].Item2, currentTotalObjectsOnScene[i].Item1));
+        }
+        //currentTotalObjectsOnScene = GameObject.FindGameObjectsWithTag("Resource");
+        //Debug.Log(currentTotalObjectsOnScene.Length + " objects in total at first.");
         StartCoroutine(fruityBushWave());
+    }
+
+    private void initResourcesToSpawn()
+    {
+        for (int i = 0; i < resources.Length; i++)
+        {
+            resourcesToSpawn.Add(new System.Tuple<GameObject, int>(resources[i], nbResources[i]));
+        }
+    }
+
+    private void initTotalGameObjects()
+    {
+        for (int i = 0; i < resources.Length; i++)
+        {
+            currentTotalObjectsOnScene.Add(new System.Tuple<GameObject, int>(resourcesToSpawn[i].Item1, 0));
+        }
     }
 
     // Update is called once per frame
@@ -31,20 +56,30 @@ public class deployResources : MonoBehaviour
 
     private void spawnFruityBush(int index)
     {
-        GameObject resourceToInstantiate = resources[index];
+        GameObject resourceToInstantiate = resourcesToSpawn[index].Item1;
         GameObject a = Instantiate(resourceToInstantiate) as GameObject;
         a.transform.position = new Vector3(Random.Range(-12f, width), 0f, Random.Range(-12f, height));
     }
 
     IEnumerator fruityBushWave()
     {
-        while(totalGameObjects.Length < 10)
+        for (int i = 0; i < resources.Length; i++) { 
+        
+            while (currentTotalObjectsOnScene[i].Item2 < resourcesToSpawn[i].Item2)
+            {
+                yield return new WaitForSeconds(respawnTime);
+                spawnFruityBush(i);
+                currentTotalObjectsOnScene[i] = new System.Tuple<GameObject, int>(resourcesToSpawn[i].Item1, currentTotalObjectsOnScene[i].Item2 + 1);
+                print(System.String.Format("{0} {1} présents au total pour le moment sur la scène.", currentTotalObjectsOnScene[i].Item2, currentTotalObjectsOnScene[i].Item1));
+            }
+        }
+        /*while(currentTotalObjectsOnScene.Length < 10)
         {
             yield return new WaitForSeconds(respawnTime);
             int index = Random.Range(0, resources.Length);
             spawnFruityBush(index);
-            totalGameObjects = GameObject.FindGameObjectsWithTag("Resource");
-            Debug.Log(totalGameObjects.Length + " objects in total.");
-        }
+            currentTotalObjectsOnScene = GameObject.FindGameObjectsWithTag("Resource");
+            Debug.Log(currentTotalObjectsOnScene.Length + " objects in total.");
+        }*/
     }
 }
