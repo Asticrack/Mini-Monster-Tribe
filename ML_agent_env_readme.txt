@@ -34,3 +34,9 @@ window => package manager => aller dans les package : unity registry => trouver 
 
 FINI : Et et voila fin pret pour l'incroyable experience du machine learning !
 
+
+tips pour l'entrainement, la commande pr lancer un entrainement est :
+mlagents-learn 
+(vous devez voir le logo ascii unity)
+une fois la commande lancée, il suffis d appuyer sur plays pr lancer le training
+
