@@ -10,10 +10,13 @@ using UnityEngine;
 public class deployResources : MonoBehaviour
 {
     public GameObject[] resources;
+    public GameObject terrain;
     public int[] nbResources;
     private List<System.Tuple<GameObject, int>> resourcesToSpawn = new List<System.Tuple<GameObject, int>>();
-    private float width = 12f;
-    private float height = 12f;
+    private float terrain_width_origin;
+    private float terrain_height_origin;
+    private float terrain_width_end;
+    private float terrain_height_end;
     private float respawnTime = 0.05f;
     private List<System.Tuple<GameObject, int>> currentTotalObjectsOnScene = new List<System.Tuple<GameObject, int>>();
     private List<GameObject> badMonsterHouses = new List<GameObject>();
@@ -25,13 +28,15 @@ public class deployResources : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        GameObject terrainCenter = terrain.transform.Find("terrainCenter").gameObject;
+        print(terrainCenter.transform.position);
+        terrain_width_origin = terrainCenter.transform.position.x -12f;
+        terrain_height_origin = terrainCenter.transform.position.z -12f;
+        terrain_width_end = terrainCenter.transform.position.x + 12f;
+        terrain_height_end = terrainCenter.transform.position.z + 12f;
+        print(System.String.Format("gauche={0} droite={1} bas={2} haut={3}", terrain_width_origin, terrain_width_end, terrain_height_origin, terrain_height_end));
         initResourcesToSpawn();
         initTotalGameObjects();
-
-        for (int i = 0; i < currentTotalObjectsOnScene.Count; i++)
-        {
-            print(System.String.Format("{0} {1} présents au total pour le moment sur la scène.", currentTotalObjectsOnScene[i].Item2, currentTotalObjectsOnScene[i].Item1));
-        }
         //currentTotalObjectsOnScene = GameObject.FindGameObjectsWithTag("Resource");
         //Debug.Log(currentTotalObjectsOnScene.Length + " objects in total at first.");
         StartCoroutine(fruityBushWave());
@@ -63,35 +68,35 @@ public class deployResources : MonoBehaviour
     {
         for (int i = 0; i < badMonsterHouses.Count; i++)
         {
-            if (xPos < (badMonsterHouses[i].transform.position.x + 1f))
+            if (xPos < (badMonsterHouses[i].transform.position.x + 2f))
             {
-                xPos = Random.Range(-width, width);
+                xPos = Random.Range(terrain_width_origin, terrain_width_end);
             }
-            if (zPos < (badMonsterHouses[i].transform.position.z + 1f))
+            if (zPos < (badMonsterHouses[i].transform.position.z + 2f))
             {
-                zPos = Random.Range(-height, height);
+                zPos = Random.Range(terrain_height_end, terrain_height_end);
             }
         }
         for (int i = 0; i < coolMonsterHouses.Count; i++)
         {
-            if (xPos < (coolMonsterHouses[i].transform.position.x + 1f))
+            if (xPos < (coolMonsterHouses[i].transform.position.x + 2f))
             {
-                xPos = Random.Range(-width, width);
+                xPos = Random.Range(terrain_width_origin, terrain_width_end);
             }
-            if (zPos < (coolMonsterHouses[i].transform.position.z + 1f))
+            if (zPos < (coolMonsterHouses[i].transform.position.z + 2f))
             {
-                zPos = Random.Range(-height, height);
+                zPos = Random.Range(terrain_height_origin, terrain_height_end);
             }
         }
         for (int i = 0; i < playerMonsterHouse.Count; i++)
         {
-            if (xPos < (playerMonsterHouse[i].transform.position.x + 1f))
+            if (xPos < (playerMonsterHouse[i].transform.position.x + 2f))
             {
-                xPos = Random.Range(-width, width);
+                xPos = Random.Range(terrain_width_origin, terrain_width_end);
             }
-            if (zPos < (playerMonsterHouse[i].transform.position.z + 1f))
+            if (zPos < (playerMonsterHouse[i].transform.position.z + 2f))
             {
-                zPos = Random.Range(-height, height);
+                zPos = Random.Range(terrain_height_origin, terrain_height_end);
             }
         }
         return new System.Tuple<float, float>(xPos, zPos);
@@ -101,8 +106,8 @@ public class deployResources : MonoBehaviour
     {
         GameObject resourceToInstantiate = resourcesToSpawn[index].Item1;
         GameObject a = Instantiate(resourceToInstantiate) as GameObject;
-        float xPos = Random.Range(-width, width);
-        float zPos = Random.Range(-height, height);
+        float xPos = Random.Range(terrain_width_origin, terrain_width_end);
+        float zPos = Random.Range(terrain_height_origin, terrain_height_end);
 
         if (isHouseObject(a))
         {
@@ -128,21 +133,21 @@ public class deployResources : MonoBehaviour
 
     private float generateMonsterPositionNearHouseOnX(GameObject house, GameObject monster)
     {
-        float xPos = Random.Range(house.transform.position.x, house.transform.position.x + 1f);
-        if (xPos <= -width || xPos >= width)
-        {
-            xPos = generateMonsterPositionNearHouseOnX(house, monster);
-        }
+        float xPos = Random.Range(house.transform.position.x, house.transform.position.x + 1.5f);
+        //if (xPos < terrain_width_origin || xPos > terrain_width_end)
+        //{
+        //    xPos = generateMonsterPositionNearHouseOnX(house, monster);
+        //}
         return xPos;
     }
 
     private float generateMonsterPositionNearHouseOnZ(GameObject house, GameObject monster)
     {
-        float zPos = Random.Range(house.transform.position.z, house.transform.position.z + 1f);
-        if (zPos <= -height || zPos >= height)
-        {
-            zPos = generateMonsterPositionNearHouseOnZ(house, monster);
-        }
+        float zPos = Random.Range(house.transform.position.z, house.transform.position.z + 1.5f);
+        //if (zPos < terrain_width_origin || zPos > terrain_width_end)
+        //{ 
+        //    zPos = generateMonsterPositionNearHouseOnZ(house, monster);
+        //}
         return zPos;
     }
 
@@ -158,7 +163,7 @@ public class deployResources : MonoBehaviour
             b = Instantiate(monsters.Item1) as GameObject;
             b.transform.position = new Vector3(generateMonsterPositionNearHouseOnX(a, b), b.transform.position.y, generateMonsterPositionNearHouseOnZ(a, b));
             currentTotalObjectsOnScene[monstersIndex] = new System.Tuple<GameObject, int>(monsters.Item1, currentTotalObjectsOnScene[monstersIndex].Item2 + 1);
-            print(System.String.Format("{0} {1} présents au total pour le moment sur la scène.", currentTotalObjectsOnScene[monstersIndex].Item2, currentTotalObjectsOnScene[monstersIndex].Item1));
+            //print(System.String.Format("{0} {1} présents au total pour le moment sur la scène.", currentTotalObjectsOnScene[monstersIndex].Item2, currentTotalObjectsOnScene[monstersIndex].Item1));
         }
     }
 
@@ -197,7 +202,7 @@ public class deployResources : MonoBehaviour
                     yield return new WaitForSeconds(respawnTime);
                     spawnFruityBush(i);
                     currentTotalObjectsOnScene[i] = new System.Tuple<GameObject, int>(resourcesToSpawn[i].Item1, currentTotalObjectsOnScene[i].Item2 + 1);
-                    print(System.String.Format("{0} {1} présents au total pour le moment sur la scène.", currentTotalObjectsOnScene[i].Item2, currentTotalObjectsOnScene[i].Item1));
+                    //print(System.String.Format("{0} {1} présents au total pour le moment sur la scène.", currentTotalObjectsOnScene[i].Item2, currentTotalObjectsOnScene[i].Item1));
                 }
             }
         }
