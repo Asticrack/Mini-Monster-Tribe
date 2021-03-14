@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 13710107168040770}
   - component: {fileID: 310940149721880167}
   - component: {fileID: 439707817}
+  - component: {fileID: -3164607553747511228}
   m_Layer: 8
   m_Name: fruity bush
   m_TagString: Resource
@@ -115,6 +116,18 @@ MonoBehaviour:
   information_text_object: {fileID: 0}
   test: {fileID: 0}
   z_spawn_factor: 2
+--- !u!114 &-3164607553747511228
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 543160173687067944}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5dbdd1f3fa8fcb7499338614f798587a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4002389369529604393
 GameObject:
   m_ObjectHideFlags: 0
