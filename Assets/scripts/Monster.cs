@@ -9,9 +9,9 @@ public class Monster : MonoBehaviour, IFalling
     public int hunger = 100;
     public int thirst = 100;
 
-    public float hungerDecrementTime = 5.0f;
-    public float thirstDecrementTime = 5.0f;
-    public float healthDecrementTime = 5.0f;
+    public float hungerDecrementTime = 0.5f;
+    public float thirstDecrementTime = 0.5f;
+    public float healthDecrementTime = 0.5f;
 
     private float hungerTimer = 0.0f;
     private float thirstTimer = 0.0f;
@@ -125,29 +125,32 @@ public class Monster : MonoBehaviour, IFalling
         thirstTimer += deltaTime;
         healthTimer += deltaTime;
 
-        if (hungerTimer / hungerDecrementTime > 1f)
+        if (hungerTimer / hungerDecrementTime > 1.0f)
         {
-        hunger -= Mathf.Max(0, Mathf.FloorToInt(hungerTimer / hungerDecrementTime));
-        hungerTimer = hungerTimer % hungerDecrementTime;
+            hunger = Mathf.Max(0, hunger - Mathf.FloorToInt(hungerTimer / hungerDecrementTime));
+            hungerTimer = hungerTimer % hungerDecrementTime;
+            Debug.Log("Hunger = " + hunger);
         }
 
-        if (thirstTimer / thirstDecrementTime > 1f)
+        if (thirstTimer / thirstDecrementTime > 1.0f)
         {
-        thirst -= Mathf.Max(0, Mathf.FloorToInt(thirstTimer / thirstDecrementTime));
-        thirstTimer = thirstTimer % thirstDecrementTime;
+            thirst = Mathf.Max(0, thirst - Mathf.FloorToInt(thirstTimer / thirstDecrementTime));
+            thirstTimer = thirstTimer % thirstDecrementTime;
+            Debug.Log("Thirst = " + thirst);
         }
 
-        if (healthTimer / healthDecrementTime > 1f)
+        if (healthTimer / healthDecrementTime > 1.0f)
         {
-        if (hunger == 0f)
-        {
-            health -= Mathf.Max(0, Mathf.FloorToInt(healthTimer / healthDecrementTime));
-        }
-        if (thirst == 0f)
-        {
-            health -= Mathf.Max(0, Mathf.FloorToInt(healthTimer / healthDecrementTime));
-        }
-        healthTimer = healthTimer % healthDecrementTime;
+            if (hunger == 0)
+            {
+                health = Mathf.Max(0, health - Mathf.FloorToInt(healthTimer / healthDecrementTime));
+            }
+            if (thirst == 0)
+            {
+                health = Mathf.Max(0, health - Mathf.FloorToInt(healthTimer / healthDecrementTime));
+            }
+            healthTimer = healthTimer % healthDecrementTime;
+            Debug.Log("Health = " + health);
         }
     }
 
