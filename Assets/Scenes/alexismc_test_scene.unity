@@ -777,6 +777,11 @@ MonoBehaviour:
   information_text_object: {fileID: 0}
   test: {fileID: 0}
   z_spawn_factor: 2
+--- !u!4 &1781014178 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1610122281278473250, guid: 7c3ba057e346e9c48a467211e15beb20, type: 3}
+  m_PrefabInstance: {fileID: 1385107175}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1809077043 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 66377918039869422, guid: 7225d73ea69415a469177a10746cfa49, type: 3}
@@ -819,22 +824,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DecisionPeriod: 5
   TakeActionsBetweenDecisions: 1
---- !u!114 &1917344857
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1917344855}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 88b6042bc9a5d4aa58d931eae49442e5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  agentParameters:
-    maxStep: 0
-  hasUpgradedFromAgentParameters: 1
-  MaxStep: 0
 --- !u!114 &1917344858
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -848,14 +837,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BrainParameters:
-    VectorObservationSize: 1
+    VectorObservationSize: 6
     NumStackedVectorObservations: 1
     m_ActionSpec:
-      m_NumContinuousActions: 0
-      BranchSizes: 05000000
-    VectorActionSize: 05000000
+      m_NumContinuousActions: 1
+      BranchSizes: 02000000
+    VectorActionSize: 
     VectorActionDescriptions: []
-    VectorActionSpaceType: 0
+    VectorActionSpaceType: 1
     hasUpgradedBrainParametersWithActionSpec: 1
   m_Model: {fileID: 0}
   m_InferenceDevice: 1
@@ -881,6 +870,7 @@ MonoBehaviour:
     maxStep: 0
   hasUpgradedFromAgentParameters: 1
   MaxStep: 0
+  target_transform: {fileID: 1781014178}
 --- !u!114 &1917344860
 MonoBehaviour:
   m_ObjectHideFlags: 0
