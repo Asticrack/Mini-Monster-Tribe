@@ -19,9 +19,11 @@ public class Monster : MonoBehaviour, IFalling
 
     private CharacterController controller;
 
+    private bool interaction = false;
     private float speed = 10f;
     private Vector3 direction = Vector3.zero;
     private SphereCollider trigger;
+    private List<Collider> reachableColliders = new List<Collider>();
 
     // Start is called before the first frame update
     void Start() {
@@ -36,33 +38,89 @@ public class Monster : MonoBehaviour, IFalling
     }
 
     void OnTriggerEnter(Collider other) {
-        UnityEngine.Debug.Log(other);
+        if(!reachableColliders.Contains(other)) {
+            reachableColliders.Add(other);
+        }
     }
 
-    public void SetDirection(Vector3 translation)
+    void OnTriggerExit(Collider other)
     {
+        Debug.Log("exit collision with " + other);
+        if (reachableColliders.Contains(other))
+        {
+            reachableColliders.Remove(other);
+        }
+    }
+
+    void Interact() {
+        if(!interaction) {
+            return;
+        }
+
+        List<Collider> objectsToRemove = new List<Collider>();
+
+        foreach(Collider other in reachableColliders) {
+            if(other == null)
+            {
+                objectsToRemove.Add(other);
+                continue;
+            }
+            GameObject otherObject = other.gameObject;
+
+            var script_tree = otherObject.GetComponent<Tree_resource>();
+            if (script_tree != null)
+            {
+                Debug.Log(script_tree.displayInformation());
+                script_tree.getWood(1); // RECOLTE DES RESSOURCES ICI
+                return;
+            }
+            var script_water = otherObject.GetComponent<Water_resource>();
+            if (script_water != null)
+            {
+                Debug.Log(script_water.displayInformation());
+                script_water.takeRessourceWithQuantity(1); // RECOLTE DES RESSOURCES ICI
+                return;
+            }
+            var script_bush = otherObject.GetComponent<FruityBush_resource>();
+            if (script_bush != null)
+            {
+                Debug.Log(script_bush.displayInformation());
+                script_bush.recolteUneQuantiteDeFruits(1); // RECOLTE DES RESSOURCES ICI
+                return;
+            }
+        }
+
+        foreach(Collider removable in objectsToRemove)
+        {
+            reachableColliders.Remove(removable);
+        }
+    }
+
+    public void SetDirection(Vector3 translation) {
         direction = Vector3.Normalize(translation);
     }
 
-    public void Fall()
-    {
+    public void setInteraction(bool value) {
+        interaction = value;
+    }
+
+    public void Fall() {
         controller.Move(new Vector3(0, Gravity.FORCE, 0) * Time.deltaTime);
     }
 
-    public void Move()
-    {
+    public void Move() {
         controller.Move(direction * speed * Time.deltaTime);
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        updateAttributes(Time.deltaTime);
+    void Update() {
+        UpdateAttributes(Time.deltaTime);
+        Interact();
         Move();
         Fall();
     }
 
-    private void updateAttributes(float deltaTime) {
+    private void UpdateAttributes(float deltaTime) {
         hungerTimer += deltaTime;
         thirstTimer += deltaTime;
         healthTimer += deltaTime;
