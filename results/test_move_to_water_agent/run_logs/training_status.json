@@ -2,17 +2,17 @@
     "MoveToWater": {
         "checkpoints": [
             {
-                "steps": 512,
-                "file_path": "results\\test_move_to_water_agent\\MoveToWater\\MoveToWater-512.onnx",
+                "steps": 448,
+                "file_path": "results\\test_move_to_water_agent\\MoveToWater\\MoveToWater-448.onnx",
                 "reward": null,
-                "creation_time": 1615741047.6298952
+                "creation_time": 1615744779.520634
             }
         ],
         "final_checkpoint": {
-            "steps": 512,
+            "steps": 448,
             "file_path": "results\\test_move_to_water_agent\\MoveToWater.onnx",
             "reward": null,
-            "creation_time": 1615741047.6298952
+            "creation_time": 1615744779.520634
         }
     },
     "metadata": {
