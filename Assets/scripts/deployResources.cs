@@ -73,6 +73,26 @@ public class deployResources : MonoBehaviour
         }
     }
 
+    private float generateMonsterPositionNearHouseOnX(GameObject house, GameObject monster)
+    {
+        float xPos = Random.Range(house.transform.position.x, house.transform.position.x + 1f);
+        if (xPos <= -width || xPos >= width)
+        {
+            xPos = generateMonsterPositionNearHouseOnX(house, monster);
+        }
+        return xPos;
+    }
+
+    private float generateMonsterPositionNearHouseOnZ(GameObject house, GameObject monster)
+    {
+        float zPos = Random.Range(house.transform.position.z, house.transform.position.z + 1f);
+        if (zPos <= -height || zPos >= height)
+        {
+            zPos = generateMonsterPositionNearHouseOnZ(house, monster);
+        }
+        return zPos;
+    }
+
     private void spawnMonstersNearHouse(GameObject monsterHouse, string name)
     {
         System.Tuple<GameObject, int> monsters = resourcesToSpawn.Find(t => isMonterObject(t.Item1, name));
@@ -80,7 +100,7 @@ public class deployResources : MonoBehaviour
         while (currentTotalObjectsOnScene[monstersIndex].Item2 < monsters.Item2)
         {
             GameObject b = Instantiate(monsters.Item1) as GameObject;
-            b.transform.position = new Vector3(Random.Range(monsterHouse.transform.position.x + 1f, width - monsterHouse.transform.position.x - 3f), b.transform.position.y, Random.Range(monsterHouse.transform.position.z + 1f, height - monsterHouse.transform.position.z - 3f));
+            b.transform.position = new Vector3(generateMonsterPositionNearHouseOnX(monsterHouse, b), b.transform.position.y, generateMonsterPositionNearHouseOnZ(monsterHouse, b));
             currentTotalObjectsOnScene[monstersIndex] = new System.Tuple<GameObject, int>(monsters.Item1, currentTotalObjectsOnScene[monstersIndex].Item2 + 1);
             print(System.String.Format("{0} {1} présents au total pour le moment sur la scène.", currentTotalObjectsOnScene[monstersIndex].Item2, currentTotalObjectsOnScene[monstersIndex].Item1));
         }
