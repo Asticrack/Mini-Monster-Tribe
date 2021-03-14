@@ -150,7 +150,8 @@ MonoBehaviour:
   - {fileID: 1999793849445639719, guid: 3ce9c281e80c7514bb4962c654e45df5, type: 3}
   - {fileID: 4051311567335417219, guid: 7c3ba057e346e9c48a467211e15beb20, type: 3}
   - {fileID: 543160173687067944, guid: 69dda7154c9db8747aef191cc7050e02, type: 3}
-  nbResources: 010000000200000001000000020000000500000001000000140000000400000023000000
+  terrain: {fileID: 527757104}
+  nbResources: 010000000100000001000000030000000300000001000000140000000300000023000000
 --- !u!1 &948288599
 GameObject:
   m_ObjectHideFlags: 0
@@ -288,6 +289,10 @@ PrefabInstance:
     - target: {fileID: 533357111596342995, guid: 9133dac6da5dd244184f1610f3d3eaa3, type: 3}
       propertyPath: m_Name
       value: terrain
+      objectReference: {fileID: 0}
+    - target: {fileID: 5332282800865340637, guid: 9133dac6da5dd244184f1610f3d3eaa3, type: 3}
+      propertyPath: m_Name
+      value: terrainCenter
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9133dac6da5dd244184f1610f3d3eaa3, type: 3}

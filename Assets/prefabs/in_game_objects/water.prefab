@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5710205249178082874}
   - component: {fileID: 7373275263779393379}
   - component: {fileID: 263437333}
+  - component: {fileID: 3077392125796560204}
   m_Layer: 8
   m_Name: water
   m_TagString: Resource
@@ -116,6 +117,18 @@ MonoBehaviour:
   information_text_object: {fileID: 0}
   test: {fileID: 0}
   z_spawn_factor: 2
+--- !u!114 &3077392125796560204
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4051311567335417219}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba57cf2f4edcd254ba970800a4d5a5d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4211371420791322564
 GameObject:
   m_ObjectHideFlags: 0
