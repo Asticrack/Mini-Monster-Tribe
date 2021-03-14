@@ -4,6 +4,19 @@ using UnityEngine;
 
 public class Monster : MonoBehaviour, IFalling
 {
+
+    public int health = 100;
+    public int hunger = 100;
+    public int thirst = 100;
+
+    public float hungerDecrementTime = 5.0f;
+    public float thirstDecrementTime = 5.0f;
+    public float healthDecrementTime = 5.0f;
+
+    private float hungerTimer = 0.0f;
+    private float thirstTimer = 0.0f;
+    private float healthTimer = 0.0f;
+
     private CharacterController controller;
 
     private float speed = 10f;
@@ -44,8 +57,40 @@ public class Monster : MonoBehaviour, IFalling
     // Update is called once per frame
     void Update()
     {
+        updateAttributes(Time.deltaTime);
         Move();
         Fall();
+    }
+
+    private void updateAttributes(float deltaTime) {
+        hungerTimer += deltaTime;
+        thirstTimer += deltaTime;
+        healthTimer += deltaTime;
+
+        if (hungerTimer / hungerDecrementTime > 1f)
+        {
+        hunger -= Mathf.Max(0, Mathf.FloorToInt(hungerTimer / hungerDecrementTime));
+        hungerTimer = hungerTimer % hungerDecrementTime;
+        }
+
+        if (thirstTimer / thirstDecrementTime > 1f)
+        {
+        thirst -= Mathf.Max(0, Mathf.FloorToInt(thirstTimer / thirstDecrementTime));
+        thirstTimer = thirstTimer % thirstDecrementTime;
+        }
+
+        if (healthTimer / healthDecrementTime > 1f)
+        {
+        if (hunger == 0f)
+        {
+            health -= Mathf.Max(0, Mathf.FloorToInt(healthTimer / healthDecrementTime));
+        }
+        if (thirst == 0f)
+        {
+            health -= Mathf.Max(0, Mathf.FloorToInt(healthTimer / healthDecrementTime));
+        }
+        healthTimer = healthTimer % healthDecrementTime;
+        }
     }
 
 }
