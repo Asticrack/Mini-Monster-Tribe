@@ -57,7 +57,9 @@ public class FruityBush_resource : MonoBehaviour
     {
         if (currentFruitsQuantity == 0)
         {
-            Destroy(gameObject);
+            Transform fruits = gameObject.transform.GetChild(1);
+            Destroy(fruits.gameObject);
+            //Destroy(gameObject);
         }
     }
 }
