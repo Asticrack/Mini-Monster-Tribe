@@ -129,14 +129,12 @@ public class Monster : MonoBehaviour, IFalling
         {
             hunger = Mathf.Max(0, hunger - Mathf.FloorToInt(hungerTimer / hungerDecrementTime));
             hungerTimer = hungerTimer % hungerDecrementTime;
-            Debug.Log("Hunger = " + hunger);
         }
 
         if (thirstTimer / thirstDecrementTime > 1.0f)
         {
             thirst = Mathf.Max(0, thirst - Mathf.FloorToInt(thirstTimer / thirstDecrementTime));
             thirstTimer = thirstTimer % thirstDecrementTime;
-            Debug.Log("Thirst = " + thirst);
         }
 
         if (healthTimer / healthDecrementTime > 1.0f)
@@ -150,7 +148,6 @@ public class Monster : MonoBehaviour, IFalling
                 health = Mathf.Max(0, health - Mathf.FloorToInt(healthTimer / healthDecrementTime));
             }
             healthTimer = healthTimer % healthDecrementTime;
-            Debug.Log("Health = " + health);
         }
     }
 
