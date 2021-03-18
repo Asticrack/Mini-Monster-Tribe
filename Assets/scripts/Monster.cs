@@ -89,6 +89,21 @@ public class Monster : MonoBehaviour, IFalling
                 script_bush.recolteUneQuantiteDeFruits(1); // RECOLTE DES RESSOURCES ICI
                 return;
             }
+
+            var script_tree_other_monster = otherObject.GetComponent<Monster>();
+            if (script_tree_other_monster != null && isABadMonster() && (script_tree_other_monster.isACoolMonster() || script_tree_other_monster.isPlayerMonster()) )
+            {
+                script_tree_other_monster.getHitted(5, otherObject);
+                hitMonster(5, otherObject);
+                return;
+            }
+            if (script_tree_other_monster != null && (isACoolMonster() || isPlayerMonster()) &&script_tree_other_monster.isABadMonster())
+            {
+                script_tree_other_monster.hitMonster(5, gameObject);
+                getHitted(5, otherObject);
+                return;
+            }
+
         }
 
         foreach(Collider removable in objectsToRemove)
@@ -105,12 +120,53 @@ public class Monster : MonoBehaviour, IFalling
         interaction = value;
     }
 
+    public void hitMonster(int foodQuantity, GameObject hittedMonster)
+    {
+        print(System.String.Format("{0} hitted {1} and won +{2} food quantity", gameObject, hittedMonster, foodQuantity));
+        if (hunger < 100 && (100 - foodQuantity) >= hunger)
+        {
+            hunger += foodQuantity;
+        } else if (hunger < 100 & (100 - foodQuantity) < hunger)
+        {
+            hunger += (100 - foodQuantity);
+        }
+        Debug.Log("Hunger = " + hunger);
+    }
+
+    public void getHitted(int damage, GameObject badMonster)
+    {
+        print(System.String.Format("{0} got hitted by {1} and lost -{2} points of health", gameObject, badMonster, damage));
+        if (health - damage <= 0)
+        {
+            health = 0;
+        } else
+        {
+            health -= damage;
+        }
+        Debug.Log("Health = " + health);
+    }
+
     public void Fall() {
         controller.Move(new Vector3(0, Gravity.FORCE, 0) * Time.deltaTime);
     }
 
     public void Move() {
         controller.Move(direction * speed * Time.deltaTime);
+    }
+
+    public bool isABadMonster()
+    {
+        return gameObject.ToString().Contains("bad");
+    }
+
+    public bool isACoolMonster()
+    {
+        return gameObject.ToString().Contains("cool");
+    }
+
+    public bool isPlayerMonster()
+    {
+        return gameObject.ToString().Contains("player");
     }
 
     // Update is called once per frame
@@ -130,14 +186,12 @@ public class Monster : MonoBehaviour, IFalling
         {
             hunger = Mathf.Max(0, hunger - Mathf.FloorToInt(hungerTimer / hungerDecrementTime));
             hungerTimer = hungerTimer % hungerDecrementTime;
-            //Debug.Log("Hunger = " + hunger);
         }
 
         if (thirstTimer / thirstDecrementTime > 1.0f)
         {
             thirst = Mathf.Max(0, thirst - Mathf.FloorToInt(thirstTimer / thirstDecrementTime));
             thirstTimer = thirstTimer % thirstDecrementTime;
-            //Debug.Log("Thirst = " + thirst);
         }
 
         if (healthTimer / healthDecrementTime > 1.0f)
@@ -151,7 +205,6 @@ public class Monster : MonoBehaviour, IFalling
                 health = Mathf.Max(0, health - Mathf.FloorToInt(healthTimer / healthDecrementTime));
             }
             healthTimer = healthTimer % healthDecrementTime;
-            //Debug.Log("Health = " + health);
         }
     }
 
