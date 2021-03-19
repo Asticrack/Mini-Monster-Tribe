@@ -20,7 +20,7 @@ public class Monster : MonoBehaviour, IFalling
     private CharacterController controller;
 
     private bool interaction = false;
-    private float speed = 10f;
+    private float speed = 1f;
     private Vector3 direction = Vector3.zero;
     private SphereCollider trigger;
     private List<Collider> reachableColliders = new List<Collider>();
@@ -38,6 +38,7 @@ public class Monster : MonoBehaviour, IFalling
     }
 
     void OnTriggerEnter(Collider other) {
+        Debug.Log("OnTriggerEnter");
         if(!reachableColliders.Contains(other)) {
             reachableColliders.Add(other);
         }
@@ -45,7 +46,7 @@ public class Monster : MonoBehaviour, IFalling
 
     void OnTriggerExit(Collider other)
     {
-        Debug.Log("exit collision with " + other);
+        //Debug.Log("exit collision with " + other);
         if (reachableColliders.Contains(other))
         {
             reachableColliders.Remove(other);
@@ -56,7 +57,7 @@ public class Monster : MonoBehaviour, IFalling
         if(!interaction) {
             return;
         }
-
+        //Debug.Log("SHRECK IS LOVE");
         List<Collider> objectsToRemove = new List<Collider>();
 
         foreach(Collider other in reachableColliders) {
@@ -185,14 +186,12 @@ public class Monster : MonoBehaviour, IFalling
         {
             hunger = Mathf.Max(0, hunger - Mathf.FloorToInt(hungerTimer / hungerDecrementTime));
             hungerTimer = hungerTimer % hungerDecrementTime;
-            //Debug.Log("Hunger = " + hunger);
         }
 
         if (thirstTimer / thirstDecrementTime > 1.0f)
         {
             thirst = Mathf.Max(0, thirst - Mathf.FloorToInt(thirstTimer / thirstDecrementTime));
             thirstTimer = thirstTimer % thirstDecrementTime;
-            //Debug.Log("Thirst = " + thirst);
         }
 
         if (healthTimer / healthDecrementTime > 1.0f)
@@ -206,7 +205,6 @@ public class Monster : MonoBehaviour, IFalling
                 health = Mathf.Max(0, health - Mathf.FloorToInt(healthTimer / healthDecrementTime));
             }
             healthTimer = healthTimer % healthDecrementTime;
-            //Debug.Log("Health = " + health);
         }
     }
 

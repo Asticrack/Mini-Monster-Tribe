@@ -1,0 +1,23 @@
+{
+    "MoveToWater": {
+        "checkpoints": [
+            {
+                "steps": 448,
+                "file_path": "results\\test_move_to_water_agent\\MoveToWater\\MoveToWater-448.onnx",
+                "reward": null,
+                "creation_time": 1615744779.520634
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 448,
+            "file_path": "results\\test_move_to_water_agent\\MoveToWater.onnx",
+            "reward": null,
+            "creation_time": 1615744779.520634
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.2.0",
+        "mlagents_version": "0.24.1",
+        "torch_version": "1.8.0+cu111"
+    }
+}
