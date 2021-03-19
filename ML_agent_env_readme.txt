@@ -12,6 +12,7 @@ py -m venv venv
 
 6 : on active l'environnement virtuel en lancant le fichier activate dans ce nouveau dossier venv avec la commande
 venv\Scripts\activate
+Note : Sur Windows, si une erreur de type "l’exécution de scripts est désactivée sur ce système", apparaît, executer la commande suivante dans le terminal courant : Set-ExecutionPolicy Unrestricted -Scope Process
 
 7 : vous pouvez voir si vous etes bien dans votre envorionnement python avec le (venv) affiché à gauche dans le cmd
 
