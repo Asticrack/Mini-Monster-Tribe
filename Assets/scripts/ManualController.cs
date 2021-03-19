@@ -19,7 +19,6 @@ public class ManualController : MonoBehaviour
     private void move()
     {
         nextMove = Vector3.zero;
-        bool interact = false;
         if (Input.GetKey(KeyCode.UpArrow))
         {
             nextMove.z += 1;
@@ -39,27 +38,12 @@ public class ManualController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space)) {
             monster.setInteraction(true);
-            interact = true;
         }
         else {
             monster.setInteraction(false);
         }
 
         monster.SetDirection(nextMove);
-
-        if (nextMove != Vector3.zero)
-        {
-            monsterAnimation.setRun();
-            monsterAnimation.setDirection(nextMove);
-        }
-        else if(interact)
-        {
-            monsterAnimation.setHit();
-        } else
-        {
-            monsterAnimation.setIdle();
-        }
-
     }
 
     // Update is called once per frame

@@ -19,6 +19,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &7582472926772896060
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3581622021574022812}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 548d3d1df302ca947a18a7b7b47b9373, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6337677108355637412
 GameObject:
   m_ObjectHideFlags: 0
@@ -32,6 +44,7 @@ GameObject:
   - component: {fileID: 6051573071685023382}
   - component: {fileID: 1504949495}
   - component: {fileID: 2512656953895434177}
+  - component: {fileID: 2415675603542002522}
   m_Layer: 8
   m_Name: cool monster
   m_TagString: Untagged
@@ -145,6 +158,19 @@ MonoBehaviour:
   hungerDecrementTime: 0.5
   thirstDecrementTime: 0.5
   healthDecrementTime: 0.5
+--- !u!135 &2415675603542002522
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6337677108355637412}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1.2699518
+  m_Center: {x: 0.09083176, y: 0, z: 0}
 --- !u!1001 &4428467324222172109
 PrefabInstance:
   m_ObjectHideFlags: 0

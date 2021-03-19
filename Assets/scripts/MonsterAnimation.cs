@@ -39,17 +39,9 @@ public class MonsterAnimation : MonoBehaviour
         rotationTime = 0;
     }
 
-    private void rotateIfNecessary()
-    {
-            
-
-    }
-
     // Update is called once per frame
     void Update()
     {
-        rotateIfNecessary();
-
         if (animationValue == 0)
         {
             animator.SetBool("run", false);
