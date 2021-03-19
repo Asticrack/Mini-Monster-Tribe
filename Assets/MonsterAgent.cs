@@ -29,9 +29,9 @@ public class MonsterAgent : Agent
     }
 
     // Move the target to a new spot
-    Target.localPosition = new Vector3(Random.value * 8 - 4,
+    Target.localPosition = new Vector3(Random.value * 10 - 5,
                                        0.5f,
-                                       Random.value * 8 - 4);
+                                       Random.value * 10 - 5);
   }
 
   public override void CollectObservations(VectorSensor sensor)
@@ -58,7 +58,7 @@ public class MonsterAgent : Agent
     float distanceToTarget = Vector3.Distance(this.transform.localPosition, Target.localPosition);
 
     // Reached target
-    if (distanceToTarget < 1.42f)
+    if (distanceToTarget < 1.6f)
     {
       SetReward(1.0f);
       EndEpisode();
