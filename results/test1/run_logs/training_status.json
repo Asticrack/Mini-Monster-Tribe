@@ -1,0 +1,23 @@
+{
+    "MoveToWater": {
+        "checkpoints": [
+            {
+                "steps": 192,
+                "file_path": "results\\test1\\MoveToWater\\MoveToWater-192.onnx",
+                "reward": null,
+                "creation_time": 1615718232.850871
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 192,
+            "file_path": "results\\test1\\MoveToWater.onnx",
+            "reward": null,
+            "creation_time": 1615718232.850871
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.2.0",
+        "mlagents_version": "0.24.1",
+        "torch_version": "1.8.0+cu111"
+    }
+}
