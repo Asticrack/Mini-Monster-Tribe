@@ -20,19 +20,17 @@ public class Monster : MonoBehaviour, IFalling
     private CharacterController controller;
 
     private bool interaction = false;
-    private float speed = 1f;
+    private float speed = 10f;
     private Vector3 direction = Vector3.zero;
     private SphereCollider trigger;
     private List<Collider> reachableColliders = new List<Collider>();
+    private MonsterAnimation monsterAnimation;
 
     // Start is called before the first frame update
     void Start() {
         controller = gameObject.AddComponent<CharacterController>();
-        if(controller == null)
-        {
-            controller = gameObject.GetComponent<CharacterController>();
-        }
-        trigger = GetComponent<SphereCollider>();
+        trigger = gameObject.GetComponent<SphereCollider>();
+        monsterAnimation = gameObject.GetComponentInChildren<MonsterAnimation>() as MonsterAnimation;
         Physics.IgnoreCollision(GetComponent<SphereCollider>(), GetComponent<CharacterController>());
         Physics.IgnoreCollision(GetComponent<CapsuleCollider>(), GetComponent<CharacterController>());
     }
@@ -57,7 +55,6 @@ public class Monster : MonoBehaviour, IFalling
         if(!interaction) {
             return;
         }
-        //Debug.Log("SHRECK IS LOVE");
         List<Collider> objectsToRemove = new List<Collider>();
 
         foreach(Collider other in reachableColliders) {
@@ -169,11 +166,29 @@ public class Monster : MonoBehaviour, IFalling
         return gameObject.ToString().Contains("player");
     }
 
+    void Animate()
+    {
+        if (interaction)
+        {
+            monsterAnimation.setHit();
+        }
+        else if (direction != Vector3.zero)
+        {
+            monsterAnimation.setRun();
+            monsterAnimation.setDirection(direction);
+        }
+        else
+        {
+            monsterAnimation.setIdle();
+        }
+    }
+
     // Update is called once per frame
     void Update() {
         UpdateAttributes(Time.deltaTime);
         Interact();
         Move();
+        Animate();
         Fall();
     }
 

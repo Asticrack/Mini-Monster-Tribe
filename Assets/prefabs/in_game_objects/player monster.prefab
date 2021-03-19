@@ -44,6 +44,7 @@ GameObject:
   - component: {fileID: 5411760140763764573}
   - component: {fileID: 277615859}
   - component: {fileID: 1777219520261629168}
+  - component: {fileID: 8215778824759713202}
   m_Layer: 8
   m_Name: player monster
   m_TagString: Untagged
@@ -157,6 +158,19 @@ MonoBehaviour:
   hungerDecrementTime: 0.5
   thirstDecrementTime: 0.5
   healthDecrementTime: 0.5
+--- !u!135 &8215778824759713202
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5411760140763764574}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1.3342628
+  m_Center: {x: -0.057762146, y: 0, z: 0}
 --- !u!1001 &911111849581283352
 PrefabInstance:
   m_ObjectHideFlags: 0

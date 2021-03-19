@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6991175571578166043}
   - component: {fileID: 575265450}
   - component: {fileID: 3845670422217078814}
+  - component: {fileID: 6694293505084078608}
   m_Layer: 8
   m_Name: bad monster
   m_TagString: Untagged
@@ -126,6 +127,19 @@ MonoBehaviour:
   hungerDecrementTime: 0.5
   thirstDecrementTime: 0.5
   healthDecrementTime: 0.5
+--- !u!135 &6694293505084078608
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6595587244432540485}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1.1868677
+  m_Center: {x: 0.004937172, y: 0, z: 0}
 --- !u!95 &5400543849576331263
 Animator:
   serializedVersion: 3
@@ -145,6 +159,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &5358872660699227647
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7067083631687930893}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 548d3d1df302ca947a18a7b7b47b9373, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &7985509751569099100
 PrefabInstance:
   m_ObjectHideFlags: 0
