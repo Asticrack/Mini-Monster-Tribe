@@ -28,7 +28,11 @@ public class Monster : MonoBehaviour, IFalling
 
     // Start is called before the first frame update
     void Start() {
-        controller = gameObject.AddComponent<CharacterController>();
+        controller = gameObject.GetComponent<CharacterController>();
+        if(controller == null)
+        {
+            controller = gameObject.AddComponent<CharacterController>();
+        }
         trigger = gameObject.GetComponent<SphereCollider>();
         monsterAnimation = gameObject.GetComponentInChildren<MonsterAnimation>() as MonsterAnimation;
         Physics.IgnoreCollision(GetComponent<SphereCollider>(), GetComponent<CharacterController>());
@@ -36,7 +40,7 @@ public class Monster : MonoBehaviour, IFalling
     }
 
     void OnTriggerEnter(Collider other) {
-        Debug.Log("OnTriggerEnter");
+        //Debug.Log("OnTriggerEnter");
         if(!reachableColliders.Contains(other)) {
             reachableColliders.Add(other);
         }

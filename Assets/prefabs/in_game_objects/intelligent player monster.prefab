@@ -1,36 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!95 &4056540369790740711
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6487156163761639446}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: abad3affd2f050942a7a5fff0956a697, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &3232935984025166048
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6487156163761639446}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 548d3d1df302ca947a18a7b7b47b9373, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1259019644913857025
 GameObject:
   m_ObjectHideFlags: 0
@@ -49,7 +18,6 @@ GameObject:
   - component: {fileID: 1259019643718058801}
   - component: {fileID: 1259019643718058802}
   - component: {fileID: 1259019643718058803}
-  - component: {fileID: 1259019643718058804}
   m_Layer: 8
   m_Name: intelligent player monster
   m_TagString: Untagged
@@ -111,7 +79,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1259019644913857025}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 765b5a6586be5ba48a6525cc399d5804, type: 3}
   m_Name: 
@@ -225,24 +193,37 @@ MonoBehaviour:
   m_UseChildSensors: 1
   m_UseChildActuators: 1
   m_ObservableAttributeHandling: 0
---- !u!114 &1259019643718058804
+--- !u!95 &4056540369790740711
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6487156163761639446}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: abad3affd2f050942a7a5fff0956a697, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &3232935984025166048
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1259019644913857025}
-  m_Enabled: 0
+  m_GameObject: {fileID: 6487156163761639446}
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 765b5a6586be5ba48a6525cc399d5804, type: 3}
+  m_Script: {fileID: 11500000, guid: 548d3d1df302ca947a18a7b7b47b9373, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
-  hunger: 100
-  thirst: 100
-  hungerDecrementTime: 0.5
-  thirstDecrementTime: 0.5
-  healthDecrementTime: 0.5
 --- !u!1001 &6252803849630952775
 PrefabInstance:
   m_ObjectHideFlags: 0

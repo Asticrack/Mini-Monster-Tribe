@@ -130,6 +130,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6135303146235980123, guid: 80fc6a5a83d1fd049b4c27cb6096b385, type: 3}
+      propertyPath: m_Model
+      value: 
+      objectReference: {fileID: 5022602860645237092, guid: c60137a08f3a5a340bbb94b0fb645e0f, type: 3}
     - target: {fileID: 6135303147330131831, guid: 80fc6a5a83d1fd049b4c27cb6096b385, type: 3}
       propertyPath: m_Name
       value: MonsterTrainingArea (5)
@@ -187,6 +191,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6135303146235980123, guid: 80fc6a5a83d1fd049b4c27cb6096b385, type: 3}
+      propertyPath: m_Model
+      value: 
+      objectReference: {fileID: 5022602860645237092, guid: c60137a08f3a5a340bbb94b0fb645e0f, type: 3}
     - target: {fileID: 6135303147330131831, guid: 80fc6a5a83d1fd049b4c27cb6096b385, type: 3}
       propertyPath: m_Name
       value: MonsterTrainingArea (4)
@@ -244,6 +252,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6135303146235980123, guid: 80fc6a5a83d1fd049b4c27cb6096b385, type: 3}
+      propertyPath: m_Model
+      value: 
+      objectReference: {fileID: 5022602860645237092, guid: c60137a08f3a5a340bbb94b0fb645e0f, type: 3}
     - target: {fileID: 6135303147330131831, guid: 80fc6a5a83d1fd049b4c27cb6096b385, type: 3}
       propertyPath: m_Name
       value: MonsterTrainingArea (1)
@@ -301,6 +313,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6135303146235980123, guid: 80fc6a5a83d1fd049b4c27cb6096b385, type: 3}
+      propertyPath: m_Model
+      value: 
+      objectReference: {fileID: 5022602860645237092, guid: c60137a08f3a5a340bbb94b0fb645e0f, type: 3}
     - target: {fileID: 6135303147330131831, guid: 80fc6a5a83d1fd049b4c27cb6096b385, type: 3}
       propertyPath: m_Name
       value: MonsterTrainingArea (2)
@@ -358,6 +374,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6135303146235980123, guid: 80fc6a5a83d1fd049b4c27cb6096b385, type: 3}
+      propertyPath: m_Model
+      value: 
+      objectReference: {fileID: 5022602860645237092, guid: c60137a08f3a5a340bbb94b0fb645e0f, type: 3}
     - target: {fileID: 6135303147330131831, guid: 80fc6a5a83d1fd049b4c27cb6096b385, type: 3}
       propertyPath: m_Name
       value: MonsterTrainingArea (3)
@@ -472,6 +492,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6135303146235980123, guid: 80fc6a5a83d1fd049b4c27cb6096b385, type: 3}
+      propertyPath: m_Model
+      value: 
+      objectReference: {fileID: 5022602860645237092, guid: c60137a08f3a5a340bbb94b0fb645e0f, type: 3}
     - target: {fileID: 6135303147330131831, guid: 80fc6a5a83d1fd049b4c27cb6096b385, type: 3}
       propertyPath: m_Name
       value: MonsterTrainingArea

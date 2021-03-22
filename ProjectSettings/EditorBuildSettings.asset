@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/lola_scene.unity
     guid: 4262f4e8f93a29b499deb57d6d67954b
+  - enabled: 1
+    path: Assets/Scenes/alexisb_learning_scene.unity
+    guid: 9d8f13a9b79d6664b9a7d2246405bca1
   m_configObjects: {}

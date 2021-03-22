@@ -21,18 +21,25 @@ public class ManualController : MonoBehaviour
         nextMove = Vector3.zero;
         if (Input.GetKey(KeyCode.UpArrow))
         {
+            //Debug.Log("up");
             nextMove.z += 1;
         }
         if (Input.GetKey(KeyCode.DownArrow))
         {
+            //Debug.Log("DownArrow");
+
             nextMove.z -= 1;
         }
         if (Input.GetKey(KeyCode.LeftArrow))
         {
+            //Debug.Log("LeftArrow");
+
             nextMove.x -= 1;
         }
         if (Input.GetKey(KeyCode.RightArrow))
         {
+            //Debug.Log("RightArrow");
+
             nextMove.x += 1;
         }
 
